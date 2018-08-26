@@ -1,0 +1,4 @@
+/node_modules
+/.vscode
+/src/models/NavigationDataDB - Test.js
+/logs/*.log

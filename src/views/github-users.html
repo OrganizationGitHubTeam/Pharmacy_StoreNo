@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="dashboard-stat purpel-saffron-body">
+                <h2 class="text-center" style="padding-top: 10%;">{{datas.uesrCount}}</h2>
+            </div>
+            <div class="dashboard-stat purpel-saffron-footer">
+                <h4 class="text-center h-padding">User</h4>
+            </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="dashboard-stat green-saffron-body">
+                <h2 class="text-center" style="padding-top: 10%;">{{datas.totalAdmin}}</h2>
+            </div>
+            <div class="dashboard-stat green-saffron-footer">
+                <h4 class="text-center h-padding">Admin</h4>
+            </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="dashboard-stat yellow-saffron-body">
+                <h2 class="text-center" style="padding-top: 10%;">{{datas.totalDeveloper}}</h2>
+            </div>
+            <div class="dashboard-stat yellow-saffron-footer">
+                <h4 class="text-center h-padding">Developer</h4>
+            </div>
+    </div>
+</div><br/><br/>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="well well-lg background-white">
+            <div id="donut-example"></div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="well well-lg dev-background-blue">
+                               
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="user in datas.usersRole">
+                                <td>{{user.userName}}</td>
+                                <td>{{user.role != 'admin' ? 'Developer' : 'Admin'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+</div>

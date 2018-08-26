@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<meta name="description" content="Latest updates and statistic charts">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!--begin::Web font -->
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: { "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"] },
+			active: function () {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<link href="assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+
+	<link href="public/css/custom.css" rel="stylesheet" type="text/css" />
+	<base href="/">
+</head>
+
+<body ng-app="ecommerceApp" class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+	<!-- begin:: Page -->
+	<div class="m-grid m-grid--hor m-grid--root m-page">
+
+		<!-- begin::Heder -->
+		<header id="m_header" class="m-grid__item m-header " m-minimize-offset="200" m-minimize-mobile-offset="200" ng-include="'header.html'">
+		</header>
+		<!-- end::Heder -->
+
+		<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+			<!-- sidemenu html -->
+			<button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
+				<i class="la la-close"></i>
+			</button>
+			<div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-dark">
+				<!-- BEGIN: Aside Menu -->
+				<div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " m-menu-vertical="1" m-menu-scrollable="0" m-menu-dropdown-timeout="500" style="height: 100%;" ng-include="'sidemenu.html'">
+				</div>
+				<!-- END: Aside Menu -->
+			</div>
+
+			<!-- content of html -->
+			<div class="m-grid__item m-grid__item--fluid m-wrapper">
+				<div class="m-content">
+					<ui-view></ui-view>
+					<!-- <div class="m-portlet m-portlet--space">
+						<div class="m-portlet__head">
+							<div class="m-portlet__head-caption">
+								<div class="m-portlet__head-title">
+									
+								</div>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<!-- end of content html -->
+			
+		</div>
+		<!-- Begin Footer -->
+		<footer class="m-grid__item	m-footer" ng-include="'footer.html'">
+		</footer>
+		<!-- End footer -->
+	</div>
+
+	<div id="m_scroll_top" class="m-scroll-top">
+		<i class="la la-arrow-up"></i>
+	</div>
+
+	<script src="./public/lib/angular.min.js" type="text/javascript"></script>
+	<script src="./public/lib/angular-ui-router.js" type="text/javascript"></script>
+	<script src="./public/lib/angular-ui-router.min.js" type="text/javascript"></script>
+	<script src="./public/lib/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src="./public/lib/sweetalert.min.js"></script>
+	<script src="./public/lib/lodash.js"></script>
+	<script src="./public/lib/moment.min.js"></script>
+
+	<script src="app.js"></script>
+	<script src="src/controllers/GitHubRepoController.js"></script>
+	<script src="src/controllers/GitHubUserController.js"></script>
+	<script src="src/controllers/GitHubIndivisualRepoController.js"></script>
+
+	<script src="src/Constant.js"></script>
+
+	<script src="src/services/GitHubService.js"></script>
+
+	<script src="assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+	<script src="assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+</body>
+
+</html>

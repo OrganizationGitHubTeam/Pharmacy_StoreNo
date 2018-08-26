@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+                    <div class="dashboard-stat yellow-saffron-body">
+                        <h2 class="text-center" style="padding-top: 10%;">{{datas.repositoryCount}}</h2>
+                    </div>
+                    <div class="dashboard-stat yellow-saffron-footer">
+                        <h4 class="text-center h-padding">Repository</h4>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+                    <div class="dashboard-stat purpel-saffron-body">
+                        <h2 class="text-center" style="padding-top: 10%;">{{datas.teamCount}}</h2>
+                    </div>
+                    <div class="dashboard-stat purpel-saffron-footer">
+                        <h4 class="text-center h-padding">Team</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="well well-lg background-white">
+                <br/>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h4>Repository Size (in Kb)</h4>
+                </div>
+                <hr/>
+                <div id="donut-example"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="well well-lg dev-background-blue">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <br/>
+                    <h4>Last Revision History</h4>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <loop ng-repeat="data in datas.finalReleaseData track by $index">
+                        <a class="btn btn-sm form-control btn-bg-color" data-toggle="collapse" data-target="#data_{{$index}}"><b>{{data.repoName}}</b></a>
+                        <div id="data_{{$index}}" class="btn-bg-color-details collapse"><br/>
+                            <table class="table">
+                                <tbody>
+                                    <tr ng-if="data.latestMaster">
+                                        <td>{{data.latestMaster.target_commitish}}</td>
+                                        <td>{{data.latestMaster.tag_name}}</td>
+                                        <td>{{data.latestMaster.published_at}}</td>
+                                    </tr>
+                                    <tr ng-if="data.latestDev">
+                                        <td>{{data.latestDev.target_commitish}}</td>
+                                        <td>{{data.latestDev.tag_name}}</td>
+                                        <td>{{data.latestDev.published_at}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </loop>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
